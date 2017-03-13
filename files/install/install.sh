@@ -30,7 +30,8 @@ apt-get install -qy --force-yes --no-install-recommends telnet net-tools
 apt-get install -qy --force-yes --no-install-recommends runit
 
 # Install "Guacamole" web client web application in combination with "Apache Tomcat"
-# and the "VNC support plugin for Guacamole" (for a web-based access without a dedicated client software)
+# and the "VNC support plugin for Guacamole" (for a web-based access without a dedicated client software).
+# The "libguac-client-vnc0" library is necessary according to "https://packages.debian.org/jessie/net/guacamole"
 apt-get install -qy --force-yes --no-install-recommends openjdk-8-jdk \
 							libossp-uuid-dev \
                                                         libpng12-dev \
