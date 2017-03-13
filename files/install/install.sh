@@ -20,7 +20,7 @@ apt-get install -qy --force-yes --no-install-recommends vnc4server \
 							firefox-esr \
 							libfuse2
 
-# Install "xrdp"
+# Install "xrdp" (e.g. to allow connecting via "Windows Remote Desktop")
 apt-get install -qy --force-yes --no-install-recommends xrdp
 
 # Install network tools like "telnet" and "net-tools" (including "netstat") for testing purposes
@@ -30,7 +30,7 @@ apt-get install -qy --force-yes --no-install-recommends telnet net-tools
 apt-get install -qy --force-yes --no-install-recommends runit
 
 # Install "Guacamole" web client web application in combination with "Apache Tomcat"
-# and the "VNC support plugin for Guacamole"
+# and the "VNC support plugin for Guacamole" (for a web-based access without a dedicated client software)
 apt-get install -qy --force-yes --no-install-recommends openjdk-8-jdk \
 							libossp-uuid-dev \
                                                         libpng12-dev \
