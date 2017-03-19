@@ -47,6 +47,9 @@ apt-get install -qy --force-yes --no-install-recommends openjdk-8-jdk \
                                                         guacamole \
 							libguac-client-vnc0
 
+# Install "terminator" terminal for window manager "openbox"
+apt-get install -qy --force-yes terminator
+
 # Install "less" (for easily reading/tailing files)
 apt-get install -qy --force-yes --no-install-recommends less
 
