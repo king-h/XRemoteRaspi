@@ -11,6 +11,7 @@ apt-get install -qy --force-yes --no-install-recommends wget \
 
 # Install "Openbox" (window manager) and a leightweight VNC-/X-server combination
 # called "vnc4server" (details see: http://www.butschek.de/fachartikel/vnc4server/).
+# The "menu" package is to integrate all existing programs in "openbox".
 apt-get install -qy --force-yes --no-install-recommends vnc4server \
                                                         x11-xserver-utils \
 							xfonts-base \
@@ -20,6 +21,7 @@ apt-get install -qy --force-yes --no-install-recommends vnc4server \
 							openbox-themes \
 							obconf \
 							obmenu \
+							menu \
 							xterm \
 							firefox-esr \
 							libfuse2
