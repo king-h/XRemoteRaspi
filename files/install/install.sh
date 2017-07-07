@@ -110,7 +110,7 @@ cat <<'EOT' > /etc/sv/xrdp/log/run
 exec svlogd -tt /var/log/xrdp
 EOT
 
-ln -s /etc/sv/xrdp /etc/services/xrdp
+ln -s /etc/sv/xrdp /etc/service/xrdp
 
 # Providing a custom "Xrdp" configuration file "xrdp.ini"
 cat <<'EOT' > /etc/xrdp/xrdp.ini
