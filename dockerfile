@@ -1,3 +1,3 @@
-FROM resin/rpi-raspbian:jessie-20160831
+FROM resin/rpi-raspbian:latest
 
 MAINTAINER Holger King HolgerKing@gmx.net
