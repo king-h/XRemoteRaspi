@@ -16,7 +16,7 @@ echo "nobody:PASSWD" | chpasswd
 #####################################
 
 # Repositories
-echo 'deb http://packages.debian.org jessie stable' >> /etc/apt/sources.list
+echo 'deb http://packages.debian.org stretch main contrib non-free rpi firmware' > /etc/apt/sources.list
 
 # Install general tools (e.g. wget HTTP client, compressor, editor)
 apt-get install -qy --force-yes --no-install-recommends wget \
