@@ -70,6 +70,7 @@ apt-get install -qy --force-yes --no-install-recommends less
 
 # Install Oracle JDK 8u131 for ARM as the packaged OpenJDK for Debian performs too slow when starting JDownloader
 wget --no-cookies --no-check-certificate --header "Cookie: oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-arm32-vfp-hflt.tar.gz" -O jdk-8u131-linux-arm32-vfp-hflt.tar.gz
+update-alternatives --install /usr/bin/java java /opt/jdk1.8.0_131/jre/bin/java 1100
 
 
 
