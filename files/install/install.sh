@@ -241,7 +241,8 @@ touch /var/lib/tomcat8/logs/catalina.out
 
 cd /var/lib/tomcat8
 
-exec /usr/bin/java -Djava.util.logging.config.file=/var/lib/tomcat8/conf/logging.properties \
+exec /usr/bin/java -Dguacamole.home=/etc/guacamole \
+                   -Djava.util.logging.config.file=/var/lib/tomcat8/conf/logging.properties \
                    -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager \
                    -Djava.awt.headless=true -Xmx128m -XX:+UseConcMarkSweepGC \
                    -Djava.endorsed.dirs=/usr/share/tomcat8/endorsed \
