@@ -192,12 +192,12 @@ cat <<'EOT' > /etc/xrdp/sesman.ini
 [Globals]
 ListenAddress=127.0.0.1
 ListenPort=3350
-EnableUserWindowManager=1
+EnableUserWindowManager=true
 UserWindowManager=startwm.sh
 DefaultWindowManager=startwm.sh
 
 [Security]
-AllowRootLogin=1
+AllowRootLogin=true
 MaxLoginRetry=4
 TerminalServerUsers=tsusers
 TerminalServerAdmins=tsadmins
@@ -205,8 +205,8 @@ AlwaysGroupCheck = false
 
 [Sessions]
 X11DisplayOffset=10
-MaxSessions=1
-KillDisconnected=0
+MaxSessions=50
+KillDisconnected=false
 IdleTimeLimit=0
 DisconnectedTimeLimit=0
 Policy=Default
@@ -218,11 +218,14 @@ EnableSyslog=1
 SyslogLevel=DEBUG
 
 [Xvnc]
-param1=-bs
-param2=-ac
-param5=-localhost
-param6=-dpi
-param7=96
+param=Xvnc
+param=-bs
+param=-ac
+param=-nolisten
+param=tcp
+param=-localhost
+param=-dpi
+param=96
 EOT
 
 # Configuring "openbox" window manager service for the "runit" init daemon
