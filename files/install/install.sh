@@ -284,5 +284,8 @@ find /etc/sv -name "run" -type f -exec chmod 755 {} \; -print
 # Download latest Guacamole package
 wget --user-agent=Mozilla -H --max-redirect=10 -O /tmp/guacamole-0.9.12-incubating.war "http://mirror.23media.de/apache/incubator/guacamole/0.9.12-incubating/binary/guacamole-0.9.12-incubating.war"
 
+# Download latest JDownloader JAR
+wget http://installer.jdownloader.org/JDownloader.jar
+
 # Python Skripten bereitstellen
 # /sbin/setuser und /sbin/my_init (launched when the container is started)
