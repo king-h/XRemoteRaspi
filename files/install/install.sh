@@ -52,8 +52,7 @@ apt-get install -qy --force-yes --no-install-recommends runit
 # Install "Guacamole" web client web application in combination with "Apache Tomcat"
 # and the "VNC support plugin for Guacamole" (for a web-based access without a dedicated client software).
 # The "libguac-client-vnc0" library is necessary according to "https://packages.debian.org/jessie/net/guacamole"
-apt-get install -qy --force-yes --no-install-recommends openjdk-8-jdk \
-							libossp-uuid-dev \
+apt-get install -qy --force-yes --no-install-recommends libossp-uuid-dev \
                                                         libpng12-dev \
                                                         libfreerdp-dev \
                                                         libcairo2-dev \
@@ -68,6 +67,9 @@ apt-get install -qy --force-yes terminator
 
 # Install "less" (for easily reading/tailing files)
 apt-get install -qy --force-yes --no-install-recommends less
+
+# Install Oracle JDK 8u131 for ARM as the packaged OpenJDK for Debian performs too slow when starting JDownloader
+wget --no-cookies --no-check-certificate --header "Cookie: oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-arm32-vfp-hflt.tar.gz" -O jdk-8u131-linux-arm32-vfp-hflt.tar.gz
 
 
 
