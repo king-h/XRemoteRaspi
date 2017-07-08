@@ -1,3 +1,16 @@
+############################
+### ENVIRONMENTAL CONFIG ###
+############################
+
+# Configure existing user "nobody" for later usage
+export DEBIAN_FRONTEND="noninteractive"
+usermod -m -d /nobody nobody
+usermod -s /bin/bash nobody
+usermod -a -G adm,sudo nobody
+echo "nobody:PASSWD" | chpasswd
+
+
+
 #####################################
 ### REPOSITORIES AND DEPENDENCIES ###
 #####################################
