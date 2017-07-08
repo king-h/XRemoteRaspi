@@ -274,7 +274,7 @@ EOT
 
 ln -s /etc/sv/guacd /etc/service/guacd
 
-#setting correct execution permission rights for above added custom runit scripts
+# setting correct execution permission rights for above added custom runit scripts
 find /etc/sv -name "run" -type f -exec chmod 755 {} \; -print
 
 # Python Skripten bereitstellen
