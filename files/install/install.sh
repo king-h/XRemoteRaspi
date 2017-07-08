@@ -45,6 +45,8 @@ apt-get install -qy --force-yes --no-install-recommends openjdk-8-jdk \
                                                         libfreerdp-dev \
                                                         libcairo2-dev \
                                                         tomcat8 \
+							tomcat8-admin \
+							tomcat8-examples \
                                                         guacamole \
 							libguac-client-vnc0
 
@@ -286,6 +288,9 @@ wget --user-agent=Mozilla -H --max-redirect=10 -O /tmp/guacamole-0.9.12-incubati
 
 # Download latest JDownloader JAR
 wget http://installer.jdownloader.org/JDownloader.jar
+
+# Install Guacamole web app on Tomcat
+mv /tmp/guacamole-0.9.12-incubating.war /var/lib/tomcat8/webapps/guacamole.war
 
 # Python Skripten bereitstellen
 # /sbin/setuser und /sbin/my_init (launched when the container is started)
