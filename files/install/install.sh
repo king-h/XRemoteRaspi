@@ -5,9 +5,10 @@
 # Repositories
 echo 'deb http://packages.debian.org jessie stable' >> /etc/apt/sources.list
 
-# Install general
+# Install general tools (e.g. wget HTTP client, compressor, editor)
 apt-get install -qy --force-yes --no-install-recommends wget \
-                                                        unzip
+                                                        unzip \
+							vim
 
 # Install "Openbox" (window manager) and a leightweight VNC-/X-server combination
 # called "vnc4server" (details see: http://www.butschek.de/fachartikel/vnc4server/).
@@ -70,7 +71,7 @@ exec 2>&1
 WD=${WIDTH:-1280}
 HT=${HEIGHT:-720}
 
-exec /sbin/setuser nobody Xvnc4 :1 -geometry ${WD}x${HT} -depth 16 -rfbwait 30000 -SecurityTypes None -rfbport 5901 -bs -ac \
+exec /usr/bin/sudo nobody Xvnc4 :1 -geometry ${WD}x${HT} -depth 16 -rfbwait 30000 -SecurityTypes None -rfbport 5901 -bs -ac \
 				   -pn -fp /usr/share/fonts/X11/misc/,/usr/share/fonts/X11/75dpi/,/usr/share/fonts/X11/100dpi/ \
 				   -co /etc/X11/rgb -dpi 96
 EOT
@@ -215,7 +216,7 @@ cat <<'EOT' > /etc/sv/openbox/run
 #!/bin/bash
 exec 2>&1
 
-exec env DISPLAY=:1 HOME=/nobody /sbin/setuser nobody  /usr/bin/openbox-session
+exec env DISPLAY=:1 HOME=/nobody /usr/bin/sudo nobody /usr/bin/openbox-session
 EOT
 
 cat <<'EOT' > /etc/sv/openbox/log/run
@@ -273,7 +274,8 @@ EOT
 
 ln -s /etc/sv/guacd /etc/service/guacd
 
-
+#setting correct execution permission rights for above added custom runit scripts
+find /etc/sv -name "run" -type f -exec chmod 755 {} \; -print
 
 # Python Skripten bereitstellen
 # /sbin/setuser und /sbin/my_init (launched when the container is started)
