@@ -265,7 +265,6 @@ username=ask
 password=ask
 ip=127.0.0.1
 port=5901
-
 EOT
 
 # Configuring "xrdp-sesman" service for the "runit" init daemon
