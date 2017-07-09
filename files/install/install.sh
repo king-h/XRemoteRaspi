@@ -269,6 +269,13 @@ param=tcp
 param=-localhost
 param=-dpi
 param=96
+
+[Chansrv]
+; drive redirection, defaults to xrdp_client if not set
+FuseMountName=thinclient_drives
+
+[SessionVariables]
+PULSE_SCRIPT=/etc/xrdp/pulse/default.pa
 EOT
 
 # Configuring "openbox" window manager service for the "runit" init daemon
