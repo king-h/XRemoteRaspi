@@ -201,14 +201,49 @@ AllowRootLogin=true
 MaxLoginRetry=4
 TerminalServerUsers=tsusers
 TerminalServerAdmins=tsadmins
+; When AlwaysGroupCheck=false access will be permitted
+; if the group TerminalServerUsers is not defined.
 AlwaysGroupCheck = false
 
 [Sessions]
+;; X11DisplayOffset - x11 display number offset
+; Type: integer
+; Default: 10
 X11DisplayOffset=10
+
+;; MaxSessions - maximum number of connections to an xrdp server
+; Type: integer
+; Default: 0
 MaxSessions=50
+
+;; KillDisconnected - kill disconnected sessions
+; Type: boolean
+; Default: false
+; if 1, true, or yes, kill session after 60 seconds
 KillDisconnected=false
+
+;; IdleTimeLimit - when to disconnect idle sessions
+; Type: integer
+; Default: 0
+; if not zero, the seconds without mouse or keyboard input before disconnect
+; not complete yet
 IdleTimeLimit=0
+
+;; DisconnectedTimeLimit - when to kill idle sessions
+; Type: integer
+; Default: 0
+; if not zero, the seconds before a disconnected session is killed
+; min 60 seconds
 DisconnectedTimeLimit=0
+
+;; Policy - session allocation policy
+; Type: enum [ "Default" | "UBD" | "UBI" | "UBC" | "UBDI" | "UBDC" ]
+; Default: Xrdp:<User,BitPerPixel> and Xvnc:<User,BitPerPixel,DisplaySize>
+; "UBD" session per <User,BitPerPixel,DisplaySize>
+; "UBI" session per <User,BitPerPixel,IPAddr>
+; "UBC" session per <User,BitPerPixel,Connection>
+; "UBDI" session per <User,BitPerPixel,DisplaySize,IPAddr>
+; "UBDC" session per <User,BitPerPixel,DisplaySize,Connection>
 Policy=Default
 
 [Logging]
@@ -216,6 +251,14 @@ LogFile=xrdp-sesman.log
 LogLevel=DEBUG
 EnableSyslog=1
 SyslogLevel=DEBUG
+
+[Xorg]
+param=Xorg
+param=-config
+param=xrdp/xorg.conf
+param=-noreset
+param=-nolisten
+param=tcp
 
 [Xvnc]
 param=Xvnc
