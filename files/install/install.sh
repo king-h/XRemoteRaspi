@@ -4,12 +4,12 @@
 
 # Configure existing user "nobody" for later usage
 export DEBIAN_FRONTEND="noninteractive"
+mkdir /nobody
 usermod -m -d /nobody nobody
 usermod -s /bin/bash nobody
 usermod -a -G adm,sudo nobody
+usermod -R nobody:users /nobody
 echo "nobody:PASSWD" | chpasswd
-
-
 
 #####################################
 ### REPOSITORIES AND DEPENDENCIES ###
