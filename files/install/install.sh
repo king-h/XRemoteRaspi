@@ -64,8 +64,10 @@ apt-get install -qy --allow-downgrades --allow-remove-essential --allow-change-h
 
 # Installed after above step to meet dependencies
 apt-get install -qy --allow-downgrades --allow-remove-essential --allow-change-held-packages --no-install-recommends libpng12-dev \
-                                                        libfreerdp-dev \
-                                                        libcairo2-dev
+                                                        libfreerdp-dev
+
+# Installed after above step to meet dependencies
+apt-get install -qy --allow-downgrades --allow-remove-essential --allow-change-held-packages --no-install-recommends libcairo2-dev
 
 # Install "terminator" terminal for window manager "openbox"
 apt-get install -qy --allow-downgrades --allow-remove-essential --allow-change-held-packages terminator
