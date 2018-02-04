@@ -19,6 +19,7 @@ echo "nobody:PASSWD" | chpasswd
 # echo 'deb http://deb.debian.org/debian stretch main contrib non-free' > /etc/apt/sources.list
 # apt-key adv --keyserver keyserver.ubuntu.com --recv-keys <missing_key>
 echo 'deb http://mirrordirector.raspbian.org/raspbian/ stretch main contrib non-free rpi firmware' > sources.list
+apt-get update
 
 # Install general tools (e.g. wget HTTP client, compressor, editor)
 apt-get install -qy --force-yes --no-install-recommends wget \
