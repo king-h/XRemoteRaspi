@@ -81,7 +81,7 @@ wget --no-cookies --no-check-certificate https://www.rarlab.com/rar/unrar-5.5.0-
 # Install Oracle JDK 8u161 for ARM 32bit as the packaged OpenJDK for Debian performs too slow when starting JDownloader
 wget --no-cookies --no-check-certificate --header "Cookie: oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u161-b12/2f38c3b165be4555a1fa6e98c45e0808/jdk-8u161-linux-arm32-vfp-hflt.tar.gz" -O /tmp/jdk-8u161-linux-arm32-vfp-hflt.tar.gz
 gunzip jdk-8u161-linux-arm32-vfp-hflt.tar.gz
-tar -xvf /tmp/jdk-8u161-linux-arm32-vfp-hflt.tar.gz -C /opt
+tar -xvf /tmp/jdk-8u161-linux-arm32-vfp-hflt.tar -C /opt
 update-alternatives --install /usr/bin/java java /opt/jdk1.8.0_161/jre/bin/java 1100
 
 
