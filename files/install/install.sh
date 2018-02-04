@@ -469,7 +469,7 @@ wget --user-agent=Mozilla -H --max-redirect=10 -O /tmp/guacamole-0.9.13-incubati
 
 # Download latest JDownloader JAR
 mkdir /opt/jd2
-wget http://installer.jdownloader.org/JDownloader.jar -O /opt/jd2
+wget http://installer.jdownloader.org/JDownloader.jar -O /opt/jd2/JDownloader.jar
 
 # Install Guacamole web app on Tomcat
 mv /tmp/guacamole-0.9.13-incubating.war /var/lib/tomcat8/webapps/guacamole.war
