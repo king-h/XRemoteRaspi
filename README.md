@@ -8,4 +8,4 @@ The services are located below "/etc/service" where they can be started from via
 - runsv
 
 Due to performance problems with OpenJDK in combination with JDownloader2 the commercial flavor of Oracle JDK has been taken. To start JDownloader manually please issue the following command:
-/opt/jdk1.8.0_131/jre/bin/java -jar /opt/jd2/JDownloader.jar
+<jdk_install_dir>/jre/bin/java -jar /opt/jd2/JDownloader.jar
