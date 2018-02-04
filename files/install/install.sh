@@ -468,7 +468,8 @@ find /etc/sv -name "run" -type f -exec chmod 755 {} \; -print
 wget --user-agent=Mozilla -H --max-redirect=10 -O /tmp/guacamole-0.9.13-incubating.war "http://mirror.23media.de/apache/incubator/guacamole/0.9.13-incubating/binary/guacamole-0.9.13-incubating.war"
 
 # Download latest JDownloader JAR
-wget http://installer.jdownloader.org/JDownloader.jar
+mkdir /opt/jd2
+wget http://installer.jdownloader.org/JDownloader.jar -O /opt/jd2
 
 # Install Guacamole web app on Tomcat
 mv /tmp/guacamole-0.9.13-incubating.war /var/lib/tomcat8/webapps/guacamole.war
