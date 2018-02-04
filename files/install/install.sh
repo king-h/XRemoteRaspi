@@ -68,8 +68,11 @@ apt-get install -qy --force-yes terminator
 # Install "less" (for easily reading/tailing files)
 apt-get install -qy --force-yes --no-install-recommends less
 
-# Install Oracle JDK 8u144 for ARM as the packaged OpenJDK for Debian performs too slow when starting JDownloader
-wget --no-cookies --no-check-certificate --header "Cookie: oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u144-b01/090f390dda5b47b9b721c7dfaa008135/jdk-8u144-linux-arm32-vfp-hflt.tar.gz" -O jdk-8u144-linux-arm32-vfp-hflt.tar.gz
+# Install "unrar" for ARM (to allow unpacking downloaded files)
+wget --no-cookies --no-check-certificate https://www.rarlab.com/rar/unrar-5.5.0-arm.gz
+
+# Install Oracle JDK 8u161 for ARM 32bit as the packaged OpenJDK for Debian performs too slow when starting JDownloader
+wget --no-cookies --no-check-certificate --header "Cookie: oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u161-b12/2f38c3b165be4555a1fa6e98c45e0808/jdk-8u161-linux-arm32-vfp-hflt.tar.gz" -O jdk-8u161-linux-arm32-vfp-hflt.tar.gz
 update-alternatives --install /usr/bin/java java /opt/jdk1.8.0_144/jre/bin/java 1100
 
 
