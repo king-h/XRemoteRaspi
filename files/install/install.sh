@@ -22,14 +22,14 @@ echo 'deb http://mirrordirector.raspbian.org/raspbian/ stretch main contrib non-
 apt-get update
 
 # Install general tools (e.g. wget HTTP client, compressor, editor)
-apt-get install -qy --force-yes --no-install-recommends wget \
+apt-get install -qy --allow-downgrades --allow-remove-essential --allow-change-held-packages --no-install-recommends wget \
                                                         unzip \
 							vim
 
 # Install "Openbox" (window manager) and a leightweight VNC-/X-server combination
 # called "vnc4server" (details see: http://www.butschek.de/fachartikel/vnc4server/).
 # The "menu" package is to integrate all existing programs in "openbox".
-apt-get install -qy --force-yes --no-install-recommends vnc4server \
+apt-get install -qy --allow-downgrades --allow-remove-essential --allow-change-held-packages --no-install-recommends vnc4server \
                                                         x11-xserver-utils \
 							xfonts-base \
 							xfonts-100dpi \
@@ -44,18 +44,18 @@ apt-get install -qy --force-yes --no-install-recommends vnc4server \
 							libfuse2
 
 # Install "xrdp" (e.g. to allow connecting via "Windows Remote Desktop")
-apt-get install -qy --force-yes --no-install-recommends xrdp
+apt-get install -qy --allow-downgrades --allow-remove-essential --allow-change-held-packages --no-install-recommends xrdp
 
 # Install network tools like "telnet" and "net-tools" (including "netstat") for testing purposes
-apt-get install -qy --force-yes --no-install-recommends telnet net-tools
+apt-get install -qy --allow-downgrades --allow-remove-essential --allow-change-held-packages --no-install-recommends telnet net-tools
 
 # Install runit referenced and needed in "my_init" Python script
-apt-get install -qy --force-yes --no-install-recommends runit
+apt-get install -qy --allow-downgrades --allow-remove-essential --allow-change-held-packages --no-install-recommends runit
 
 # Install "Guacamole" web client web application in combination with "Apache Tomcat"
 # and the "VNC support plugin for Guacamole" (for a web-based access without a dedicated client software).
 # The "libguac-client-vnc0" library is necessary according to "https://packages.debian.org/jessie/net/guacamole"
-apt-get install -qy --force-yes --no-install-recommends libossp-uuid-dev \
+apt-get install -qy --allow-downgrades --allow-remove-essential --allow-change-held-packages --no-install-recommends libossp-uuid-dev \
                                                         libpng12-dev \
                                                         libfreerdp-dev \
                                                         libcairo2-dev \
@@ -66,10 +66,10 @@ apt-get install -qy --force-yes --no-install-recommends libossp-uuid-dev \
 							libguac-client-vnc0
 
 # Install "terminator" terminal for window manager "openbox"
-apt-get install -qy --force-yes terminator
+apt-get install -qy --allow-downgrades --allow-remove-essential --allow-change-held-packages terminator
 
 # Install "less" (for easily reading/tailing files)
-apt-get install -qy --force-yes --no-install-recommends less
+apt-get install -qy --allow-downgrades --allow-remove-essential --allow-change-held-packages --no-install-recommends less
 
 # Install "unrar" for ARM (to allow unpacking downloaded files)
 wget --no-cookies --no-check-certificate https://www.rarlab.com/rar/unrar-5.5.0-arm.gz
