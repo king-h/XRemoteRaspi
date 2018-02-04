@@ -288,7 +288,7 @@ cat <<'EOT' > /etc/sv/xrdp-sesman/run
 #!/bin/bash
 exec 2>&1
 
-exec /usr/sbin/xrdp-sesman --nodaemon >> /var/log/xrdp-sesman_run.log 2>&1
+exec /usr/sbin/xrdp-sesman --nodaemon >> /var/log/xrdp-sesman/xrdp-sesman_run.log 2>&1
 EOT
 
 cat <<'EOT' > /etc/sv/xrdp-sesman/log/run
