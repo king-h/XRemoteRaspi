@@ -31,6 +31,7 @@ apt-get install -qy --allow-downgrades --allow-remove-essential --allow-change-h
 # The "menu" package is to integrate all existing programs in "openbox".
 apt-get install -qy --allow-downgrades --allow-remove-essential --allow-change-held-packages --no-install-recommends vnc4server \
                                                         x11-xserver-utils \
+							dbus-x11 \
 							xfonts-base \
 							xfonts-100dpi \
 							xfonts-75dpi \
