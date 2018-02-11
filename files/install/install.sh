@@ -26,10 +26,11 @@ apt-get install -qy --allow-downgrades --allow-remove-essential --allow-change-h
                                                         unzip \
 							vim
 
-# Install "Openbox" (window manager) and a leightweight VNC-/X-server combination
-# called "vnc4server" (details see: http://www.butschek.de/fachartikel/vnc4server/).
+# Install "Openbox" (window manager) and a leightweight X-/VNC-server combination
+# called "tigervnc" replacing "vnc4server" (details see: http://www.butschek.de/fachartikel/vnc4server/).
 # The "menu" package is to integrate all existing programs in "openbox".
-apt-get install -qy --allow-downgrades --allow-remove-essential --allow-change-held-packages --no-install-recommends vnc4server \
+apt-get install -qy --allow-downgrades --allow-remove-essential --allow-change-held-packages --no-install-recommends tigervnc-standalone-server \
+                                                        tigervnc-common \
                                                         x11-xserver-utils \
 							dbus-x11 \
 							xfonts-base \
