@@ -103,7 +103,9 @@ exec 2>&1
 WD=${WIDTH:-1280}
 HT=${HEIGHT:-720}
 
-exec /usr/bin/sudo -u nobody Xvnc4 :1 -geometry ${WD}x${HT} -depth 16 -rfbwait 30000 -SecurityTypes None -rfbport 5901 -bs -ac \
+# do not forget to set a VNC password for user NOBODY via "tigervncpasswd" stored below "~nobody/.vnc/passwd"
+exec /usr/bin/sudo -u nobody Xtigervnc :1 -geometry ${WD}x${HT} -depth 16 -pixelformat RGB565 -rfbwait 30000 -rfbport 5901 \
+                                   -SecurityTypes VncAuth -PasswordFile ~nobody/.vnc/passwd -AlwaysShared -bs -ac \
 				   -pn -fp /usr/share/fonts/X11/misc/,/usr/share/fonts/X11/75dpi/,/usr/share/fonts/X11/100dpi/ \
 				   -co /etc/X11/rgb -dpi 96
 EOT
