@@ -28,7 +28,9 @@ apt-get install -qy --allow-downgrades --allow-remove-essential --allow-change-h
 
 # Install "Openbox" (window manager) and a leightweight X-/VNC-server combination
 # called "tigervnc" replacing "vnc4server" (details see: http://www.butschek.de/fachartikel/vnc4server/).
-# The "menu" package is to integrate all existing programs in "openbox".
+# The "obmenu" package is to integrate all existing programs in "openbox" (e.g. via "obmenu-generator"). "gmrun"
+# is an application launcher and helps to start programs when linked via a shortcut. "plank" offers a dock with
+# application launchers. So it represents a panel application.
 apt-get install -qy --allow-downgrades --allow-remove-essential --allow-change-held-packages --no-install-recommends tigervnc-standalone-server \
                                                         tigervnc-common \
                                                         x11-xserver-utils \
@@ -39,8 +41,11 @@ apt-get install -qy --allow-downgrades --allow-remove-essential --allow-change-h
                                                         openbox \
 							openbox-themes \
 							obconf \
-							obmenu \
+							obmenu \							
 							menu \
+							plank \
+							gmrun \
+							feh \
 							xterm \
 							firefox-esr \
 							libfuse2
