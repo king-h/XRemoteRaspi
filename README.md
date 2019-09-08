@@ -12,9 +12,14 @@ The services are located below "/etc/service" where they can be started from via
 - runsvdir
 - runsv
 
-Ideally, via:
+Ideally using "runsvdir" to load all runit services located and specified in directory "/etc/service"
 ```
 runsvdir /etc/service &
+```
+
+Alternatively, the configured runit services can be instantiated individually using:
+```
+runsv /etc/service/<service_name> &
 ```
 
 Due to performance problems with OpenJDK in combination with JDownloader2 the commercial flavor of Oracle JDK has been taken. To start JDownloader manually please issue the following command:
