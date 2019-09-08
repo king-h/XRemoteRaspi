@@ -18,7 +18,7 @@ echo "nobody:PASSWD" | chpasswd
 # Repositories (details see https://willy-tech.de/upgrade-auf-debian-9-alias-stretch/)
 # echo 'deb http://deb.debian.org/debian stretch main contrib non-free' > /etc/apt/sources.list
 # apt-key adv --keyserver keyserver.ubuntu.com --recv-keys <missing_key>
-echo 'deb http://mirrordirector.raspbian.org/raspbian/ stretch main contrib non-free rpi firmware' > sources.list
+echo 'deb http://archive.raspbian.org/raspbian buster main contrib non-free rpi firmware' > sources.list
 apt-get update
 
 # Install general tools (e.g. wget HTTP client, compressor, editor)
