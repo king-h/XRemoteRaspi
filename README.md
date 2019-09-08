@@ -1,5 +1,5 @@
 # XRemoteRaspi
-XRemoteRaspi is a docker base image derived from the base image of "balenalib/rpi-raspbian" (formerly: "resin/rpi-raspbian", now deprecated). This image allows to remote control graphical applications executed on a Raspberry Pi (ARM), e.g. JDownloader2. It can be used in combination with media center JEOS solutions like LibreELEC to run headless applications.
+XRemoteRaspi is a docker base image derived from the base image of "<a href="https://hub.docker.com/r/balenalib/rpi-raspbian">balenalib/rpi-raspbian</a>" (formerly: "<a href="https://hub.docker.com/r/balenalib/rpi-raspbian/tags">resin/rpi-raspbian</a>", now deprecated). This image allows to remote control graphical applications executed on a Raspberry Pi (ARM), e.g. JDownloader2. It can be used in combination with media center JEOS solutions like LibreELEC to run headless applications.
 
 The docker container might be started using:
 docker run -it -d -v /storage/JDownloader:/root/Downloads -p 3389:3389 -p 9022:22 -p 8088:8080 balenalib/rpi-raspbian /bin/bash
