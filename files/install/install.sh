@@ -31,7 +31,8 @@ apt-get install -qy --allow-downgrades --allow-remove-essential --allow-change-h
 # The "obmenu" package is to integrate all existing programs in "openbox" (e.g. via "obmenu-generator"). "gmrun"
 # is an application launcher and helps to start programs when linked via a shortcut. "plank" offers a dock with
 # application launchers. So it represents a panel application.
-apt-get install -qy --allow-downgrades --allow-remove-essential --allow-change-held-packages --no-install-recommends tigervnc-standalone-server \
+apt-get install -qy --allow-downgrades --allow-remove-essential --allow-change-held-packages --no-install-recommends \
+                                                        tigervnc-standalone-server \
                                                         tigervnc-common \
                                                         x11-xserver-utils \
 							dbus-x11 \
@@ -62,7 +63,8 @@ apt-get install -qy --allow-downgrades --allow-remove-essential --allow-change-h
 # Install "Guacamole" web client web application in combination with "Apache Tomcat"
 # and the "VNC support plugin for Guacamole" (for a web-based access without a dedicated client software).
 # The "libguac-client-vnc0" library is necessary according to "https://packages.debian.org/jessie/net/guacamole"
-apt-get install -qy --allow-downgrades --allow-remove-essential --allow-change-held-packages --no-install-recommends libossp-uuid-dev \
+apt-get install -qy --allow-downgrades --allow-remove-essential --allow-change-held-packages --no-install-recommends \
+                                                        libossp-uuid-dev \
                                                         tomcat8 \
 							tomcat8-admin \
 							tomcat8-examples \
@@ -86,10 +88,12 @@ apt-get install -qy --allow-downgrades --allow-remove-essential --allow-change-h
 wget --no-cookies --no-check-certificate https://www.rarlab.com/rar/unrar-5.5.0-arm.gz
 
 # Install Oracle JDK 8u161 for ARM 32bit as the packaged OpenJDK for Debian performs too slow when starting JDownloader
-wget --no-cookies --no-check-certificate --header "Cookie: oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u161-b12/2f38c3b165be4555a1fa6e98c45e0808/jdk-8u161-linux-arm32-vfp-hflt.tar.gz" -O /tmp/jdk-8u161-linux-arm32-vfp-hflt.tar.gz
-gunzip jdk-8u161-linux-arm32-vfp-hflt.tar.gz
-tar -xvf /tmp/jdk-8u161-linux-arm32-vfp-hflt.tar -C /opt
-update-alternatives --install /usr/bin/java java /opt/jdk1.8.0_161/jre/bin/java 1100
+# Before Oracle switched to a registration form for downloading the JDK, the following command worked:
+# wget --no-cookies --no-check-certificate --header "Cookie: oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u161-b12/2f38c3b165be4555a1fa6e98c45e0808/jdk-8u161-linux-arm32-vfp-hflt.tar.gz" -O /tmp/jdk-8u161-linux-arm32-vfp-hflt.tar.gz
+wget --no-cookies --no-check-certificate "https://jdk8.fe3.org/jdk-8u221-linux-arm32-vfp-hflt.tar.gz" -O /tmp/jdk-8u221-linux-arm32-vfp-hflt.tar.gz
+gunzip jdk-8u221-linux-arm32-vfp-hflt.tar.gz
+tar -xvf /tmp/jdk-8u221-linux-arm32-vfp-hflt.tar -C /opt
+update-alternatives --install /usr/bin/java java /opt/jdk1.8.0_221/jre/bin/java 1200
 
 
 
@@ -474,14 +478,14 @@ find /etc/sv -name "run" -type f -exec chmod 755 {} \; -print
 ####################
 
 # Download latest Guacamole package
-wget --user-agent=Mozilla -H --max-redirect=10 -O /tmp/guacamole-0.9.13-incubating.war "http://mirror.23media.de/apache/incubator/guacamole/0.9.13-incubating/binary/guacamole-0.9.13-incubating.war"
+wget --user-agent=Mozilla -H --max-redirect=10 -O /tmp/guacamole-1.0.0.war "http://apache.org/dyn/closer.cgi?action=download&filename=guacamole/1.0.0/binary/guacamole-1.0.0.war"
 
 # Download latest JDownloader JAR
 mkdir /opt/jd2
 wget http://installer.jdownloader.org/JDownloader.jar -O /opt/jd2/JDownloader.jar
 
 # Install Guacamole web app on Tomcat
-mv /tmp/guacamole-0.9.13-incubating.war /var/lib/tomcat8/webapps/guacamole.war
+mv /tmp/guacamole-1.0.0.war /var/lib/tomcat8/webapps/guacamole.war
 
 # Python Skripten bereitstellen
 # /sbin/setuser und /sbin/my_init (launched when the container is started)
