@@ -22,7 +22,7 @@ Due to performance problems with OpenJDK in combination with JDownloader2 the co
 <jdk_install_dir>/jre/bin/java -jar /opt/jd2/JDownloader.jar
 ```
 
-# Open Points:
+## Open Points:
 The following packages cannot installed with Debian Buster - currently not yet available:
 - guacamole
 - libguac-client-vnc0
