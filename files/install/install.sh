@@ -85,7 +85,10 @@ apt-get install -qy --allow-downgrades --allow-remove-essential --allow-change-h
 apt-get install -qy --allow-downgrades --allow-remove-essential --allow-change-held-packages --no-install-recommends less
 
 # Install "unrar" for ARM (to allow unpacking downloaded files)
-wget --no-cookies --no-check-certificate https://www.rarlab.com/rar/unrar-5.5.0-arm.gz
+mkdir /opt/unrar
+wget --no-cookies --no-check-certificate -O /opt/unrar https://www.rarlab.com/rar/unrar-5.5.0-arm.gz
+gunzip /opt/unrar/unrar-5.5.0-arm.gz
+chmod 755 /opt/unrar/unrar-5.5.0-arm
 
 # Install Oracle JDK 8u161 for ARM 32bit as the packaged OpenJDK for Debian performs too slow when starting JDownloader
 # Before Oracle switched to a registration form for downloading the JDK, the following command worked:
