@@ -94,7 +94,7 @@ chmod 755 /opt/unrar/unrar-5.5.0-arm
 # Before Oracle switched to a registration form for downloading the JDK, the following command worked:
 # wget --no-cookies --no-check-certificate --header "Cookie: oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u161-b12/2f38c3b165be4555a1fa6e98c45e0808/jdk-8u161-linux-arm32-vfp-hflt.tar.gz" -O /tmp/jdk-8u161-linux-arm32-vfp-hflt.tar.gz
 wget --no-cookies --no-check-certificate --user=<user> --password=<password> https://download.oracle.com/otn/java/jdk/8u231-b11/5b13a193868b4bf28bcb45c792fce896/jdk-8u231-linux-arm32-vfp-hflt.tar.gz?AuthParam=1572173995_4d67acf6c03e08c2b4f892bbef7a063e -O /tmp/jdk-8u231-linux-arm32-vfp-hflt.tar.gz
-gunzip jdk-8u231-linux-arm32-vfp-hflt.tar.gz
+gunzip /tmp/jdk-8u231-linux-arm32-vfp-hflt.tar.gz
 tar -xvf /tmp/jdk-8u231-linux-arm32-vfp-hflt.tar -C /opt
 update-alternatives --install /usr/bin/java java /opt/jdk1.8.0_231/jre/bin/java 1200
 
