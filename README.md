@@ -8,6 +8,11 @@ docker run -it -d -v /storage/JDownloader:/root/Downloads -p 3389:3389 -p 9022:2
 
 In general, Docker containers are designed to execute a single process. Here, a complete INIT environment is used based on RUNIT to allow starting server processes in daemon mode easily. It's a powerful alternative for SYSTEMD and Sys-V-INIT scripts.
 
+Set a VNC password for the user that is used to launch Xvnc, here "nobody". Important: confirm setting a view-only password when the following message appears "*Would you like to enter a view-only password (y/n)?*" Otherwise the VNC authentication fails"
+```
+vncpasswd
+```
+
 The services are located below "/etc/service" where they can be started from via:
 - runsvdir
 - runsv
