@@ -119,7 +119,7 @@ HT=${HEIGHT:-720}
 exec /usr/bin/sudo -u nobody Xtigervnc :1 -geometry ${WD}x${HT} -depth 16 -pixelformat RGB565 -rfbwait 30000 -rfbport 5901 \
                                    -SecurityTypes VncAuth -PasswordFile ~nobody/.vnc/passwd -AlwaysShared -bs -ac \
 				   -pn -fp /usr/share/fonts/X11/misc/,/usr/share/fonts/X11/75dpi/,/usr/share/fonts/X11/100dpi/ \
-				   -co /etc/X11/rgb -dpi 96
+				   -dpi 96
 EOT
 
 cat <<'EOT' > /etc/sv/Xvnc/log/run
