@@ -87,7 +87,7 @@ apt-get install -qy --allow-downgrades --allow-remove-essential --allow-change-h
 
 # Install "unrar" for ARM (to allow unpacking downloaded files)
 mkdir /opt/unrar
-wget --no-cookies --no-check-certificate -O /opt/unrar https://www.rarlab.com/rar/unrar-5.5.0-arm.gz
+wget --no-cookies --no-check-certificate -P /opt/unrar https://www.rarlab.com/rar/unrar-5.5.0-arm.gz
 gunzip /opt/unrar/unrar-5.5.0-arm.gz
 chmod 755 /opt/unrar/unrar-5.5.0-arm
 
