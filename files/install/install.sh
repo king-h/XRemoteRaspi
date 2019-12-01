@@ -20,6 +20,7 @@ echo "nobody:PASSWD" | chpasswd
 # apt-key adv --keyserver keyserver.ubuntu.com --recv-keys <missing_key>
 echo 'deb http://archive.raspbian.org/raspbian buster main contrib non-free rpi firmware' > sources.list
 apt-get update
+apt-get upgrade
 
 # Install general tools (e.g. wget HTTP client, compressor, editor)
 apt-get install -qy --allow-downgrades --allow-remove-essential --allow-change-held-packages --no-install-recommends wget \
