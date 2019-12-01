@@ -90,6 +90,7 @@ mkdir /opt/unrar
 wget --no-cookies --no-check-certificate -P /opt/unrar https://www.rarlab.com/rar/unrar-5.5.0-arm.gz
 gunzip /opt/unrar/unrar-5.5.0-arm.gz
 chmod 755 /opt/unrar/unrar-5.5.0-arm
+export PATH=`echo $PATH`:/opt/unrar
 
 # Install Oracle JDK 8u161 for ARM 32bit as the packaged OpenJDK for Debian performs too slow when starting JDownloader
 # Before Oracle switched to a registration form for downloading the JDK, the following command worked:
