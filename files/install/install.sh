@@ -40,8 +40,7 @@ apt-get install -qy --allow-downgrades --allow-remove-essential --allow-change-h
 							xfonts-base \
 							xfonts-100dpi \
 							xfonts-75dpi \
-                                                        openbox \
-							openbox-themes \
+                                                        openbox \							
 							obconf \
 							obmenu \							
 							menu \
@@ -73,7 +72,7 @@ apt-get install -qy --allow-downgrades --allow-remove-essential --allow-change-h
 							libguac-client-vnc0
 
 # Installed after above step to meet dependencies
-apt-get install -qy --allow-downgrades --allow-remove-essential --allow-change-held-packages --no-install-recommends libpng12-dev \
+apt-get install -qy --allow-downgrades --allow-remove-essential --allow-change-held-packages --no-install-recommends libpng-dev \
                                                         freerdp2-dev
 
 # Installed after above step to meet dependencies
