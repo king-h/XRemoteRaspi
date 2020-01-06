@@ -1,5 +1,5 @@
-# XRemoteRaspi on Debian Buster
-XRemoteRaspi is an enhanced Docker container base image derived from base image "<a href="https://hub.docker.com/r/balenalib/rpi-raspbian">balenalib/rpi-raspbian</a>" (formerly: "<a href="https://hub.docker.com/r/balenalib/rpi-raspbian/tags">resin/rpi-raspbian</a>", now deprecated). This image allows to remote control graphical applications executed on a Raspberry Pi (ARM), e.g. JDownloader2. It can be used in combination with media center JEOS solutions like LibreELEC, CoreELEC to run headless applications.
+# XRemoteRaspi on Ubuntu Bionic Beaver
+XRemoteRaspi is an enhanced Docker container base image derived from base image "<a href="https://hub.docker.com/_/ubuntu">Ubuntu</a>" (formerly: "<a href="https://hub.docker.com/r/balenalib/rpi-raspbian/tags">resin/rpi-raspbian</a>", now deprecated). This image allows to remote control graphical applications executed on a Raspberry Pi (ARM), e.g. JDownloader2. It can be used in combination with media center JEOS solutions like LibreELEC, CoreELEC to run headless applications.
 
 The docker container might be started using:
 ```
