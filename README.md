@@ -3,7 +3,7 @@ XRemoteRaspi is an enhanced Docker container base image derived from base image 
 
 The docker container might be started using:
 ```
-docker run -it -d -v /storage/JDownloader:/root/Downloads -p 3389:3389 -p 9022:22 -p 8088:8080 -p 5901:5901 balenalib/rpi-raspbian /bin/bash
+docker run -it -d -v /storage/JDownloader:/root/Downloads -p 3389:3389 -p 9022:22 -p 8088:8080 -p 5901:5901 ubuntu /bin/bash
 ```
 
 In general, Docker containers are designed to execute a single process. Here, a complete INIT environment is used based on RUNIT to allow starting server processes in daemon mode easily. It's a powerful alternative for SYSTEMD and Sys-V-INIT scripts. Here RUNIT is used to launch:
