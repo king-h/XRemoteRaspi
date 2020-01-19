@@ -35,3 +35,6 @@ Due to performance problems with OpenJDK in combination with JDownloader2 the co
 ```
 <jdk_install_dir>/jre/bin/java -jar /opt/jd2/JDownloader.jar
 ```
+
+# Hints
+- Committing the container to a new image during the installation leads to errors as a committed container becomes a read-only image layer. This results in problems when tools want to remove folders (e.g. JDownloader during an update run). That's why it's recommended to not commit a container to a new image.
