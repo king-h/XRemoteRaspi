@@ -47,6 +47,8 @@ apt-get install -qy --allow-downgrades --allow-remove-essential --allow-change-h
 							plank \
 							gmrun \
 							feh \
+							tint2 \
+							conky \
 							xterm \
 							firefox-esr \
 							libfuse2
