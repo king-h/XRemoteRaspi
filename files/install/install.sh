@@ -86,6 +86,9 @@ apt-get install -qy --allow-downgrades --allow-remove-essential --allow-change-h
 # Install "less" (for easily reading/tailing files)
 apt-get install -qy --allow-downgrades --allow-remove-essential --allow-change-held-packages --no-install-recommends less
 
+# Install "locales" and "locales-all" to allow updating the locale
+apt-get install -qy --allow-downgrades --allow-remove-essential --allow-change-held-packages --no-install-recommends locales locales-all
+
 # Install "unrar" for ARM (to allow unpacking downloaded files)
 mkdir /opt/unrar
 wget --no-cookies --no-check-certificate -P /opt/unrar https://www.rarlab.com/rar/unrar-5.5.0-arm.gz
