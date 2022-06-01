@@ -9,6 +9,8 @@ usermod -m -d /nobody nobody
 usermod -s /bin/bash nobody
 usermod -a -G adm,sudo,users nobody
 usermod -R nobody:users /nobody
+chgrp -c -R users /nobody/
+chown -c -R nobody /nobody/
 echo "nobody:PASSWD" | chpasswd
 
 #####################################
