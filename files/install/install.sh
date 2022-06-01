@@ -32,25 +32,24 @@ apt-get install -qy --allow-downgrades --allow-remove-essential --allow-change-h
 # The "obmenu" package is to integrate all existing programs in "openbox" (e.g. via "obmenu-generator"). "gmrun"
 # is an application launcher and helps to start programs when linked via a shortcut. "plank" offers a dock with
 # application launchers. So it represents a panel application.
+# Starting with Ubunut 21.04 "obmenu"-related packages ("obmenu", "obconf", "menu") became deprecated due to Python2 dependencies.
 apt-get install -qy --allow-downgrades --allow-remove-essential --allow-change-held-packages --no-install-recommends \
                                                         tigervnc-standalone-server \
                                                         tigervnc-common \
+							tigervnc-tools \
                                                         x11-xserver-utils \
 							dbus-x11 \
 							xfonts-base \
 							xfonts-100dpi \
 							xfonts-75dpi \
                                                         openbox \							
-							obconf \
-							obmenu \							
-							menu \
 							plank \
 							gmrun \
 							feh \
 							tint2 \
 							conky \
 							xterm \
-							firefox-esr \
+							firefox \
 							libfuse2
 
 # Install "xrdp" (e.g. to allow connecting via "Windows Remote Desktop")
@@ -67,10 +66,10 @@ apt-get install -qy --allow-downgrades --allow-remove-essential --allow-change-h
 # The "libguac-client-vnc0" library is necessary according to "https://packages.debian.org/jessie/net/guacamole"
 apt-get install -qy --allow-downgrades --allow-remove-essential --allow-change-held-packages --no-install-recommends \
                                                         libossp-uuid-dev \
-                                                        tomcat8 \
-							tomcat8-admin \
-							tomcat8-examples \
-                                                        guacamole \
+                                                        tomcat9 \
+							tomcat9-admin \
+							tomcat9-examples \
+                                                        guacd \
 							libguac-client-vnc0
 
 # Installed after above step to meet dependencies
@@ -88,6 +87,9 @@ apt-get install -qy --allow-downgrades --allow-remove-essential --allow-change-h
 
 # Install "locales" and "locales-all" to allow updating the locale
 apt-get install -qy --allow-downgrades --allow-remove-essential --allow-change-held-packages --no-install-recommends locales locales-all
+
+# Install "sudo"
+apt-get install -qy --allow-downgrades --allow-remove-essential --allow-change-held-packages --no-install-recommends sudo
 
 # Install "unrar" for ARM (to allow unpacking downloaded files)
 mkdir /opt/unrar
